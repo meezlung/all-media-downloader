@@ -1,12 +1,7 @@
 from pytube import YouTube
-from instascrape import Reel
-
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import time
 
 class Youtube():
-    def youtube_convert(self, url, format, resolution):
+    def convert(self, url, format, resolution):
         try:
             # Create a YouTube object
             yt = YouTube(url)
