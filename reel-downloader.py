@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-class ReelDownloader():
+class Youtube():
     def youtube_convert(self, url, format, resolution):
         try:
             # Create a YouTube object
@@ -23,6 +23,5 @@ class ReelDownloader():
             print("An error occurred.", str(e))
 
 # Create an instance of ReelDownloader
-downloader = ReelDownloader()
-
+downloader = Youtube()
 # downloader.youtube_convert("https://www.youtube.com/shorts/5WqLjXTuvyU", "mp4", "720p")
