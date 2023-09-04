@@ -1,19 +1,28 @@
 from pytube import YouTube
+from instascrape import Reel
 
-def youtube(url, format, resolution):
-    try:
-        # Create a YouTube object
-        yt = YouTube(url)
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
 
-        # Select the stream with the desired resolution and file format (e.g., 720p MP4)
-        stream = yt.streams.filter(progressive=True, file_extension=format, resolution=resolution).first()
+class ReelDownloader():
+    def youtube_convert(self, url, format, resolution):
+        try:
+            # Create a YouTube object
+            yt = YouTube(url)
 
-        # Download the video
-        stream.download()
+            # Select the stream with the desired resolution and file format (e.g., 720p MP4)
+            stream = yt.streams.filter(progressive=True, file_extension=format, resolution=resolution).first()
 
-        print("Video downloaded successfully as MP4.")
+            # Download
+            stream.download()
 
-    except Exception as e:
-        print("An error occurred:", str(e))
+            print("Youtube video downloaded successfully")
 
-youtube("https://www.youtube.com/shorts/5WqLjXTuvyU", "", )
+        except Exception as e: # Error handling
+            print("An error occurred.", str(e))
+
+# Create an instance of ReelDownloader
+downloader = ReelDownloader()
+
+# downloader.youtube_convert("https://www.youtube.com/shorts/5WqLjXTuvyU", "mp4", "720p")
