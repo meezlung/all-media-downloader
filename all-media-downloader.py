@@ -1,6 +1,7 @@
 from pytube import YouTube
 
 import requests
+import sys
 
 class Youtube():
     def convert(self, url, format, resolution):
@@ -39,4 +40,9 @@ class Media():
 
         print(response.json())
 
-Media.convert("https://www.instagram.com/p/CwgGF6rrrDg/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==")
+if len(sys.argv) >= 2:
+    input_url = sys.argv[1]
+else:
+    print("Please enter a valid url.")
+
+Media.convert(input_url)
