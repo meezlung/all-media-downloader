@@ -22,8 +22,7 @@ class Youtube():
 
 # Create an instance of ReelDownloader
 downloader = Youtube()
-# downloader.youtube_convert("https://www.youtube.com/shorts/5WqLjXTuvyU", "mp4", "720p")
-
+#downloader.convert("https://www.youtube.com/watch?v=1OQqQDeCiXw", "mp4", "720p")
 
 class Media():
     def convert(video_url):
